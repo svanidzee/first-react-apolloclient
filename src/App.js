@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Character from "./pages/Character";
+import { ChakraProvider } from "@chakra-ui/react";
+
+import CharacterList from "./pages/CharacterList";
+import theme from "./lib/theme";
+import Layout from "./components/layouts/main";
+import Search from "./components/Search";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider theme={theme}>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<CharacterList />} />
+          <Route path="/:id" element={<Character />} />
+          <Route path="/search" element={<Search />} />
+        </Routes>
+      </Layout>
+    </ChakraProvider>
   );
 }
 
