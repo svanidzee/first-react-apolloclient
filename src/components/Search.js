@@ -22,7 +22,7 @@ const Search = () => {
     setName(e.target.value);
   }, []);
 
-  const [getLocations, { loading, error, data, called }] = useLazyQuery(
+  const [getLocations, { loading, error, data }] = useLazyQuery(
     GET_CHRCTER_LOCATIONS,
     {
       variables: {

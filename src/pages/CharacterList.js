@@ -15,7 +15,7 @@ const CharacterList = () => {
   console.log("CharacterList");
 
   if (loading) return <div>Loading...</div>;
-  if (error) return <div>Ooops something went wrong...</div>;
+  if (error) return <div>something went wrong...</div>;
 
   return (
     <Grid templateColumns="repeat(2, 1fr)" gap={4}>
